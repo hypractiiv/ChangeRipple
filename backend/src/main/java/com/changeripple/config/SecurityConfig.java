@@ -32,7 +32,6 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-<<<<<<< HEAD
         BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
         return new PasswordEncoder() {
             @Override
@@ -52,9 +51,6 @@ public class SecurityConfig {
                 return false;
             }
         };
-=======
-        return new BCryptPasswordEncoder();
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
     }
 
     @Bean
@@ -80,18 +76,14 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/api/v1/auth/**",
-<<<<<<< HEAD
                                 "/api/v1/presets/**",
                                 "/api/v1/reports/**",
-=======
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                                 "/v3/api-docs/**",
                                 "/swagger-ui/**",
                                 "/swagger-ui.html",
                                 "/actuator/health",
                                 "/actuator/info"
                         ).permitAll()
-<<<<<<< HEAD
                         .requestMatchers(org.springframework.http.HttpMethod.GET,
                                 "/api/v1/projects/**",
                                 "/api/v1/components/**",
@@ -99,8 +91,6 @@ public class SecurityConfig {
                                 "/api/v1/changes/**",
                                 "/api/v1/analysis/**"
                         ).permitAll()
-=======
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

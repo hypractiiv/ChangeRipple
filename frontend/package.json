@@ -1,11 +1,7 @@
 {
   "name": "changeripple-frontend",
   "private": true,
-<<<<<<< HEAD
   "version": "2.0.0",
-=======
-  "version": "1.0.0",
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
   "type": "module",
   "scripts": {
     "dev": "vite",

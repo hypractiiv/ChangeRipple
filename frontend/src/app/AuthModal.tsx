@@ -2,23 +2,14 @@ import React, { useState } from 'react';
 import { useAuth } from './AuthContext';
 import { Modal } from '../components/common/Modal';
 import { Button } from '../components/common/Button';
-<<<<<<< HEAD
 import { KeyRound, UserPlus, Sparkles, Shield, UserCheck, Eye } from 'lucide-react';
-=======
-import { KeyRound, UserPlus, Sparkles } from 'lucide-react';
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
 
 export const AuthModal: React.FC = () => {
   const { isAuthModalOpen, closeAuthModal, login, register } = useAuth();
   const [isRegisterMode, setIsRegisterMode] = useState<boolean>(false);
 
-<<<<<<< HEAD
   const [usernameOrEmail, setUsernameOrEmail] = useState<string>('admin');
   const [password, setPassword] = useState<string>('password123');
-=======
-  const [usernameOrEmail, setUsernameOrEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
 
   const [regUsername, setRegUsername] = useState<string>('');
   const [regEmail, setRegEmail] = useState<string>('');
@@ -26,35 +17,23 @@ export const AuthModal: React.FC = () => {
   const [regFullName, setRegFullName] = useState<string>('');
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
-<<<<<<< HEAD
   const [activePreset, setActivePreset] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const handleLogin = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
-=======
-  const [error, setError] = useState<string | null>(null);
-
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
     setIsLoading(true);
     setError(null);
     try {
       await login(usernameOrEmail, password);
     } catch (err: unknown) {
       const axiosErr = err as { response?: { data?: { message?: string } } };
-<<<<<<< HEAD
       setError(axiosErr.response?.data?.message || 'Invalid username or password. Please try again.');
-=======
-      setError(axiosErr.response?.data?.message || 'Invalid username or password.');
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
     } finally {
       setIsLoading(false);
     }
   };
 
-<<<<<<< HEAD
   const handleQuickLogin = async (user: string, pass: string, presetName: string) => {
     setUsernameOrEmail(user);
     setPassword(pass);
@@ -72,8 +51,6 @@ export const AuthModal: React.FC = () => {
     }
   };
 
-=======
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -88,31 +65,12 @@ export const AuthModal: React.FC = () => {
     }
   };
 
-<<<<<<< HEAD
-=======
-  const handleQuickDemoAdmin = async () => {
-    setUsernameOrEmail('admin');
-    setPassword('password123');
-    setIsLoading(true);
-    setError(null);
-    try {
-      await login('admin', 'password123');
-    } catch (err: unknown) {
-      const axiosErr = err as { response?: { data?: { message?: string } } };
-      setError(axiosErr.response?.data?.message || 'Failed to auto-sign in admin.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
   return (
     <Modal
       isOpen={isAuthModalOpen}
       onClose={closeAuthModal}
       title={isRegisterMode ? 'Create ChangeRipple Account' : 'Sign in to ChangeRipple'}
       description="Authentication is required to view and analyze project dependency architectures."
-<<<<<<< HEAD
       maxWidth="lg"
     >
       <div className="space-y-5">
@@ -212,30 +170,6 @@ export const AuthModal: React.FC = () => {
                 </div>
               </button>
             </div>
-=======
-      maxWidth="md"
-    >
-      <div className="space-y-5">
-        {/* Quick Demo Preset Button */}
-        {!isRegisterMode && (
-          <div className="p-3.5 rounded-xl bg-brand-950/40 border border-brand-800/60 flex items-center justify-between">
-            <div>
-              <div className="text-xs font-semibold text-brand-300 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-brand-400" />
-                Quick Evaluation Mode
-              </div>
-              <div className="text-xs text-slate-400 mt-0.5">Use pre-configured administrator account</div>
-            </div>
-            <Button
-              type="button"
-              size="sm"
-              variant="primary"
-              onClick={handleQuickDemoAdmin}
-              isLoading={isLoading}
-            >
-              Sign In as Admin
-            </Button>
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
           </div>
         )}
 
@@ -245,7 +179,6 @@ export const AuthModal: React.FC = () => {
           </div>
         )}
 
-<<<<<<< HEAD
         {/* Manual Credentials Form */}
         {!isRegisterMode ? (
           <form onSubmit={handleLogin} className="space-y-3.5 pt-2 border-t border-slate-800/80">
@@ -253,10 +186,6 @@ export const AuthModal: React.FC = () => {
               Or Sign In Manually
             </div>
 
-=======
-        {!isRegisterMode ? (
-          <form onSubmit={handleLogin} className="space-y-4">
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
             <div>
               <label className="block text-xs font-medium text-slate-300 mb-1">Username or Email</label>
               <input
@@ -264,13 +193,8 @@ export const AuthModal: React.FC = () => {
                 required
                 value={usernameOrEmail}
                 onChange={(e) => setUsernameOrEmail(e.target.value)}
-<<<<<<< HEAD
                 placeholder="admin or admin@changeripple.io"
                 className="w-full px-3 py-2 bg-slate-950/80 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500"
-=======
-                placeholder="admin or email@domain.com"
-                className="w-full px-3 py-2 bg-slate-800/80 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500"
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
               />
             </div>
 
@@ -282,11 +206,7 @@ export const AuthModal: React.FC = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-<<<<<<< HEAD
                 className="w-full px-3 py-2 bg-slate-950/80 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500"
-=======
-                className="w-full px-3 py-2 bg-slate-800/80 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500"
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
               />
             </div>
 

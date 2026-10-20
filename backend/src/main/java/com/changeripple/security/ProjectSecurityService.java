@@ -28,14 +28,11 @@ public class ProjectSecurityService {
     }
 
     public boolean hasAccess(String projectId, String minimumRole) {
-<<<<<<< HEAD
         // Public demo project is universally accessible for quick presets and evaluation
         if ("p0000000-0000-0000-0000-000000000001".equals(projectId)) {
             return true;
         }
 
-=======
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth == null || !auth.isAuthenticated()) {
             return false;

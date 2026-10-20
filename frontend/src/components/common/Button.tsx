@@ -19,7 +19,6 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const variants = {
     primary:
-<<<<<<< HEAD
       'bg-gradient-to-r from-[#FBC02D] to-[#FF8F00] hover:from-[#FDD835] hover:to-[#FFA000] text-slate-950 font-bold shadow-md shadow-orange-950/40 border border-amber-300/50',
     secondary:
       'bg-slate-800/90 hover:bg-slate-700/90 text-slate-200 border border-slate-700/80 hover:border-amber-500/40 hover:text-amber-200',
@@ -29,17 +28,6 @@ export const Button: React.FC<ButtonProps> = ({
       'hover:bg-slate-800/80 text-slate-300 hover:text-amber-200',
     outline:
       'bg-transparent hover:bg-slate-800/80 text-slate-300 hover:text-amber-200 border border-slate-700 hover:border-amber-500/50',
-=======
-      'bg-brand-600 hover:bg-brand-500 text-white shadow-sm shadow-brand-900/40 border border-brand-500/40',
-    secondary:
-      'bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700/80',
-    danger:
-      'bg-red-600 hover:bg-red-500 text-white shadow-sm shadow-red-900/40 border border-red-500/40',
-    ghost:
-      'hover:bg-slate-800/80 text-slate-300 hover:text-white',
-    outline:
-      'bg-transparent hover:bg-slate-800 text-slate-300 border border-slate-700',
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
   };
 
   const sizes = {

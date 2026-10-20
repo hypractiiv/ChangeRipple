@@ -49,85 +49,48 @@ public class PresetDemoService {
         return List.of(
                 PresetInfo.builder()
                         .key("core-db-schema")
-<<<<<<< HEAD
                         .title("🛒 Scenario 1: Refactoring Order Database (High Blast Radius)")
                         .description("Modifying the core Order persistence entity. Shows how database changes ripple outward to services, controllers, and public checkout APIs.")
                         .componentName("OrderRepository")
                         .category(ChangeCategory.DATA_MODEL_CHANGE)
                         .severity(ChangeSeverity.CRITICAL)
                         .expectedOutcome("Affects 5 components across 3 tiers (OrderService, CheckoutController, Checkout API). Highlights 50% regression test reduction via greedy set cover.")
-=======
-                        .title("Core Data Model Mutation (OrderRepository)")
-                        .description("Refactor Order persistence entity to support fractional multi-currency balances and VAT isolation.")
-                        .componentName("OrderRepository")
-                        .category(ChangeCategory.DATA_MODEL_CHANGE)
-                        .severity(ChangeSeverity.CRITICAL)
-                        .expectedOutcome("High blast radius across 5 components (OrderService, CheckoutController, Checkout API) with 50% test suite reduction.")
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                         .build(),
 
                 PresetInfo.builder()
                         .key("public-api-interface")
-<<<<<<< HEAD
                         .title("💳 Scenario 2: Stripe Payment Gateway Upgrade (Critical Security Impact)")
                         .description("Updating payment gateway interface to Stripe v2. Touches credit card tokenization, compliance requirements, and customer billing.")
                         .componentName("PaymentService")
                         .category(ChangeCategory.INTERFACE_CHANGE)
                         .severity(ChangeSeverity.HIGH)
                         .expectedOutcome("Propagates to OrderService and public APIs; links to PCI-DSS compliance requirements and triggers security test prioritization.")
-=======
-                        .title("Payment Webhook Interface Alteration (PaymentService)")
-                        .description("Stripe v2 API upgrade updating token validation and webhook signatures.")
-                        .componentName("PaymentService")
-                        .category(ChangeCategory.INTERFACE_CHANGE)
-                        .severity(ChangeSeverity.HIGH)
-                        .expectedOutcome("Affects OrderService and public payment APIs; traces to PCI-DSS compliance requirement.")
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                         .build(),
 
                 PresetInfo.builder()
                         .key("isolated-utility-fix")
-<<<<<<< HEAD
                         .title("✉️ Scenario 3: Email Receipt Formatting Fix (Low-Risk Isolated Change)")
                         .description("Fixing a minor HTML character escaping issue in the email receipt helper.")
                         .componentName("EmailTemplateHelper")
                         .category(ChangeCategory.LOGIC_CHANGE)
                         .severity(ChangeSeverity.LOW)
                         .expectedOutcome("Safe, localized change affecting only NotificationWorker. Demonstrates LOW risk score (<35) and selects just 1 fast unit test.")
-=======
-                        .title("Isolated Notification Template Fix (EmailTemplateHelper)")
-                        .description("Patch character escaping in email receipt template helper.")
-                        .componentName("EmailTemplateHelper")
-                        .category(ChangeCategory.LOGIC_CHANGE)
-                        .severity(ChangeSeverity.LOW)
-                        .expectedOutcome("Low blast radius affecting only NotificationWorker; LOW risk score with minimal regression test needed.")
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                         .build(),
 
                 PresetInfo.builder()
                         .key("cycle-diamond-mesh")
-<<<<<<< HEAD
                         .title("🔄 Scenario 4: Circular Loop & Diamond Mesh (Algorithm Safety)")
                         .description("Tests a complex architectural diamond graph with an intentional circular loop between services.")
                         .componentName("DiamondServiceA")
                         .category(ChangeCategory.LOGIC_CHANGE)
                         .severity(ChangeSeverity.HIGH)
                         .expectedOutcome("Validates 3-color cycle detection preventing infinite recursion while cleanly resolving multi-path convergence.")
-=======
-                        .title("Circular & Diamond Mesh Demonstration")
-                        .description("Demonstrates cycle-breaking traversal safety, multi-path convergence, and deterministic tie-breaking.")
-                        .componentName("DiamondServiceA")
-                        .category(ChangeCategory.LOGIC_CHANGE)
-                        .severity(ChangeSeverity.HIGH)
-                        .expectedOutcome("Safely traverses diamond dependency and circular loop without infinite recursion.")
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                         .build()
         );
     }
 
     @Transactional
     public AnalysisDetailDto loadAndExecutePreset(String presetKey) {
-<<<<<<< HEAD
         String currentUserId = null;
         try {
             currentUserId = projectSecurityService.getCurrentUserId();
@@ -141,11 +104,6 @@ public class PresetDemoService {
                 .or(() -> userRepository.findByUsername("admin"))
                 .orElseGet(() -> userRepository.findAll().stream().findFirst()
                         .orElseThrow(() -> new ResourceNotFoundException("User", "id", effectiveUserId)));
-=======
-        String currentUserId = projectSecurityService.getCurrentUserId();
-        User currentUser = userRepository.findById(currentUserId)
-                .orElseThrow(() -> new ResourceNotFoundException("User", "id", currentUserId));
->>>>>>> d26229447ca75383cba0b12e543832c98380e13c
 
         ensureDemoProjectAndMembership(currentUser);
 
