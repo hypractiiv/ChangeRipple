@@ -78,9 +78,15 @@ export const ComponentTable: React.FC<ComponentTableProps> = ({ project, onSimul
   };
 
   return (
+<<<<<<< HEAD
     <div className="w-full max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
+=======
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl bg-slate-900 border border-slate-800">
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
         <div>
           <h1 className="text-xl font-bold text-slate-100">Component Architecture Explorer</h1>
           <p className="text-xs text-slate-400 mt-0.5">
@@ -111,7 +117,11 @@ export const ComponentTable: React.FC<ComponentTableProps> = ({ project, onSimul
               placeholder="Search components..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
+<<<<<<< HEAD
               className="pl-9 pr-3 py-1.5 text-xs bg-slate-950 border border-slate-800 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-amber-400 w-56"
+=======
+              className="pl-9 pr-3 py-1.5 text-xs bg-slate-950 border border-slate-800 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-brand-500 w-56"
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
             />
           </div>
 
@@ -120,7 +130,11 @@ export const ComponentTable: React.FC<ComponentTableProps> = ({ project, onSimul
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
+<<<<<<< HEAD
               className="px-2.5 py-1.5 text-xs bg-slate-950 border border-slate-800 rounded-lg text-slate-200 focus:outline-none focus:border-amber-400"
+=======
+              className="px-2.5 py-1.5 text-xs bg-slate-950 border border-slate-800 rounded-lg text-slate-200 focus:outline-none focus:border-brand-500"
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
             >
               <option value="ALL">All Types</option>
               <option value="MODULE">MODULE</option>
@@ -134,7 +148,11 @@ export const ComponentTable: React.FC<ComponentTableProps> = ({ project, onSimul
           <select
             value={critFilter}
             onChange={(e) => setCritFilter(e.target.value)}
+<<<<<<< HEAD
             className="px-2.5 py-1.5 text-xs bg-slate-950 border border-slate-800 rounded-lg text-slate-200 focus:outline-none focus:border-amber-400"
+=======
+            className="px-2.5 py-1.5 text-xs bg-slate-950 border border-slate-800 rounded-lg text-slate-200 focus:outline-none focus:border-brand-500"
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
           >
             <option value="ALL">All Criticalities</option>
             <option value="CRITICAL">CRITICAL</option>
@@ -153,6 +171,7 @@ export const ComponentTable: React.FC<ComponentTableProps> = ({ project, onSimul
       {isLoading ? (
         <LoadingSpinner message="Loading architecture components..." />
       ) : (
+<<<<<<< HEAD
         <div className="border border-slate-800 rounded-xl bg-slate-900/60 shadow-xl overflow-hidden">
           <div className="overflow-x-auto w-full">
             <table className="w-full min-w-[960px] text-left border-collapse text-xs">
@@ -167,6 +186,21 @@ export const ComponentTable: React.FC<ComponentTableProps> = ({ project, onSimul
                   <th className="py-3.5 px-5 text-right whitespace-nowrap min-w-[120px]">Actions</th>
                 </tr>
               </thead>
+=======
+        <div className="border border-slate-800 rounded-xl overflow-hidden bg-slate-900/60">
+          <table className="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr className="border-b border-slate-800 bg-slate-900/90 text-slate-400 font-mono text-[11px] uppercase tracking-wider">
+                <th className="py-3 px-4">Component</th>
+                <th className="py-3 px-4">Type</th>
+                <th className="py-3 px-4">Criticality</th>
+                <th className="py-3 px-4">Dependents (Incoming)</th>
+                <th className="py-3 px-4">Dependencies (Outgoing)</th>
+                <th className="py-3 px-4">Source Path</th>
+                <th className="py-3 px-4 text-right">Actions</th>
+              </tr>
+            </thead>
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
             <tbody className="divide-y divide-slate-800/60 text-slate-200">
               {components.length === 0 ? (
                 <tr>
@@ -245,7 +279,10 @@ export const ComponentTable: React.FC<ComponentTableProps> = ({ project, onSimul
               )}
             </tbody>
           </table>
+<<<<<<< HEAD
           </div>
+=======
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
         </div>
       )}
 

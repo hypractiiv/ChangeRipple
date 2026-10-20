@@ -61,10 +61,17 @@ export const HistoryComparePage: React.FC<HistoryComparePageProps> = ({ project 
   };
 
   return (
+<<<<<<< HEAD
     <div className="w-full max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
       {/* Header */}
       <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 shadow-lg">
         <div className="flex items-center gap-2 text-xs font-mono text-[#FBC02D] mb-1">
+=======
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+      {/* Header */}
+      <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+        <div className="flex items-center gap-2 text-xs font-mono text-brand-400 mb-1">
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
           <History className="w-4 h-4" />
           <span>Multi-Run Evolution Tracking</span>
         </div>
@@ -188,13 +195,18 @@ export const HistoryComparePage: React.FC<HistoryComparePageProps> = ({ project 
           </div>
 
           {/* Component Diffs Table */}
+<<<<<<< HEAD
           <div className="border border-slate-800 rounded-xl bg-slate-900/60 shadow-xl overflow-hidden">
+=======
+          <div className="border border-slate-800 rounded-xl overflow-hidden bg-slate-900/60">
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
             <div className="p-4 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
               <h3 className="text-sm font-bold text-slate-100">Component Status & Risk Shifts</h3>
               <span className="text-xs font-mono text-slate-400">
                 {diffResult.componentDiffs.length} components evaluated
               </span>
             </div>
+<<<<<<< HEAD
             <div className="overflow-x-auto w-full">
               <table className="w-full min-w-[900px] text-left border-collapse text-xs">
                 <thead>
@@ -207,6 +219,19 @@ export const HistoryComparePage: React.FC<HistoryComparePageProps> = ({ project 
                     <th className="py-3.5 px-4 min-w-[200px]">Explanation</th>
                   </tr>
                 </thead>
+=======
+            <table className="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr className="border-b border-slate-800 bg-slate-950/80 text-slate-400 font-mono text-[11px] uppercase tracking-wider">
+                  <th className="py-3 px-4">Component</th>
+                  <th className="py-3 px-4">Diff Status</th>
+                  <th className="py-3 px-4">Baseline Score (R1)</th>
+                  <th className="py-3 px-4">Comparison Score (R2)</th>
+                  <th className="py-3 px-4">Score Shift (&Delta;)</th>
+                  <th className="py-3 px-4">Explanation</th>
+                </tr>
+              </thead>
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
               <tbody className="divide-y divide-slate-800/60 text-slate-200">
                 {diffResult.componentDiffs.map((diff) => (
                   <tr key={diff.componentId} className="hover:bg-slate-800/40 transition-colors">
@@ -262,8 +287,14 @@ export const HistoryComparePage: React.FC<HistoryComparePageProps> = ({ project 
             </table>
           </div>
         </div>
+<<<<<<< HEAD
       </div>
     )}
   </div>
 );
+=======
+      )}
+    </div>
+  );
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
 };

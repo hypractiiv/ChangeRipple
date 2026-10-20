@@ -1,6 +1,9 @@
 # ChangeRipple — Advanced Software Change Impact Intelligence Platform
 
+<<<<<<< HEAD
 [![Release](https://img.shields.io/badge/Release-v2.0-FF8F00.svg)](file:///e:/ChangeRipple)
+=======
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
 [![Java 21](https://img.shields.io/badge/Java-21%20LTS-007396?logo=openjdk&logoColor=white)](https://openjdk.org/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3.4-6DB33F?logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![React](https://img.shields.io/badge/React-18.3.1-61DAFB?logo=react&logoColor=black)](https://react.dev/)
@@ -84,7 +87,11 @@ flowchart TD
     Canvas --> State
     Gauge --> State
     TestView --> State
+<<<<<<< HEAD
     State -->|"REST / JSON (Bearer JWT)"| Sec
+=======
+    State -->|REST / JSON (Bearer JWT)| Sec
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
     Sec --> Ctrl
     Ctrl --> CoreEngines
     Ctrl --> Parser
@@ -99,7 +106,11 @@ flowchart TD
 ### Prerequisites
 - **Java JDK 21+**
 - **Node.js 20+**
+<<<<<<< HEAD
 - **Maven 3.9+** (or use IntelliJ's built-in Maven)
+=======
+- **Maven 3.9+** (or use the built-in NetBeans/JetBrains tooling)
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
 - *(Optional)* **Docker & Docker Compose**
 
 ---
@@ -118,6 +129,7 @@ Select **`[5]` Start Both Backend and Frontend in separate windows**.
 
 ---
 
+<<<<<<< HEAD
 ### Option B: Running in IntelliJ IDEA (Recommended for Development)
 
 IntelliJ IDEA provides first-class support for both the Spring Boot backend and the React frontend:
@@ -160,6 +172,9 @@ IntelliJ IDEA provides first-class support for both the Spring Boot backend and 
 ---
 
 ### Option C: Docker Compose (Full Stack with MySQL 8)
+=======
+### Option B: Docker Compose (Full Stack with MySQL 8)
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
 
 Run from the root directory:
 ```bash
@@ -169,7 +184,11 @@ This automatically brings up MySQL 8, executes Flyway migrations, starts the Spr
 
 ---
 
+<<<<<<< HEAD
 ### Option D: Manual CLI Startup
+=======
+### Option C: Manual CLI Startup
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
 
 #### 1. Backend Startup
 ```bash

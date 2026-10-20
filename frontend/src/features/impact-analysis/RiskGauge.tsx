@@ -17,6 +17,7 @@ export const RiskGauge: React.FC<RiskGaugeProps> = ({ score, band, size = 110 })
   const strokeDashoffset = circumference - progress * circumference;
 
   const bandColors: Record<RiskBand, string> = {
+<<<<<<< HEAD
     CRITICAL: '#C62828',
     HIGH: '#FF8F00',
     MEDIUM: '#FBC02D',
@@ -24,6 +25,15 @@ export const RiskGauge: React.FC<RiskGaugeProps> = ({ score, band, size = 110 })
   };
 
   const color = bandColors[band] || '#FBC02D';
+=======
+    CRITICAL: '#ef4444',
+    HIGH: '#f97316',
+    MEDIUM: '#f59e0b',
+    LOW: '#10b981',
+  };
+
+  const color = bandColors[band] || '#14b8a6';
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
 
   return (
     <div className="relative flex flex-col items-center justify-center" style={{ width: size, height: size }}>

@@ -49,6 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Logo & Brand */}
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2.5 cursor-pointer" onClick={() => onSelectTab('dashboard')}>
+<<<<<<< HEAD
               <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#FBC02D] via-[#FF8F00] to-[#C62828] flex items-center justify-center shadow-md shadow-orange-950/60">
                 <Network className="w-5 h-5 text-slate-950 stroke-[2.5]" />
               </div>
@@ -58,6 +59,17 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </span>
                 <span className="hidden sm:inline-block ml-2 px-1.5 py-0.2 rounded text-[10px] font-mono bg-[#FBC02D]/10 text-[#FBC02D] border border-[#FBC02D]/30">
                   v2.0
+=======
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-400 to-brand-700 flex items-center justify-center shadow-md shadow-brand-900/50">
+                <Network className="w-5 h-5 text-slate-950 stroke-[2.5]" />
+              </div>
+              <div>
+                <span className="text-base font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-brand-200 bg-clip-text text-transparent">
+                  ChangeRipple
+                </span>
+                <span className="hidden sm:inline-block ml-2 px-1.5 py-0.2 rounded text-[10px] font-mono bg-brand-500/10 text-brand-400 border border-brand-500/20">
+                  v1.0
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                 </span>
               </div>
             </div>
@@ -72,7 +84,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                     const p = projects.find((proj) => proj.id === e.target.value);
                     if (p) onSelectProject(p);
                   }}
+<<<<<<< HEAD
                   className="pl-8 pr-8 py-1.5 text-xs font-medium bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg text-slate-200 focus:outline-none focus:border-amber-400 cursor-pointer transition-colors max-w-[210px] truncate"
+=======
+                  className="pl-8 pr-8 py-1.5 text-xs font-medium bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg text-slate-200 focus:outline-none focus:border-brand-500 cursor-pointer transition-colors max-w-[210px] truncate"
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                 >
                   {projects.map((p) => (
                     <option key={p.id} value={p.id} className="bg-slate-900 text-slate-200">
@@ -95,11 +111,19 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => onSelectTab(item.id)}
                   className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
                     isActive
+<<<<<<< HEAD
                       ? 'bg-slate-800 text-[#FDD835] border border-amber-500/30 shadow-inner'
                       : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900'
                   }`}
                 >
                   <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-[#FBC02D]' : 'text-slate-400'}`} />
+=======
+                      ? 'bg-slate-800 text-brand-400 border border-slate-700/80 shadow-inner'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900'
+                  }`}
+                >
+                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-brand-400' : 'text-slate-400'}`} />
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                   {item.label}
                 </button>
               );

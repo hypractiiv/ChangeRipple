@@ -34,6 +34,7 @@ export const AffectedComponentsTable: React.FC<AffectedComponentsTableProps> = (
       </div>
 
       {/* Table Container */}
+<<<<<<< HEAD
       <div className="border border-slate-800 rounded-xl bg-slate-900/60 shadow-xl overflow-hidden">
         <div className="overflow-x-auto w-full">
           <table className="w-full min-w-[900px] text-left border-collapse text-xs">
@@ -49,6 +50,22 @@ export const AffectedComponentsTable: React.FC<AffectedComponentsTableProps> = (
                 <th className="py-3.5 px-4 whitespace-nowrap min-w-[100px]">Blast Radius</th>
               </tr>
             </thead>
+=======
+      <div className="border border-slate-800 rounded-xl overflow-hidden bg-slate-900/60">
+        <table className="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr className="border-b border-slate-800 bg-slate-900/90 text-slate-400 font-mono text-[11px] uppercase tracking-wider">
+              <th className="py-3 px-4 w-10"></th>
+              <th className="py-3 px-4">Component</th>
+              <th className="py-3 px-4">Type</th>
+              <th className="py-3 px-4">Criticality</th>
+              <th className="py-3 px-4">Impact Proximity</th>
+              <th className="py-3 px-4">Depth</th>
+              <th className="py-3 px-4">Risk Score</th>
+              <th className="py-3 px-4">Blast Radius</th>
+            </tr>
+          </thead>
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
           <tbody className="divide-y divide-slate-800/60 text-slate-200">
             {filtered.length === 0 ? (
               <tr>
@@ -196,7 +213,10 @@ export const AffectedComponentsTable: React.FC<AffectedComponentsTableProps> = (
             )}
           </tbody>
         </table>
+<<<<<<< HEAD
         </div>
+=======
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
       </div>
     </div>
   );

@@ -75,7 +75,11 @@ public class AnalysisRun {
 
     @Column(name = "algorithm_version", nullable = false, length = 30)
     @Builder.Default
+<<<<<<< HEAD
     private String algorithmVersion = "v2.0-bfs-greedy";
+=======
+    private String algorithmVersion = "v1.0-bfs-greedy";
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
 
     @CreatedDate
     @Column(name = "executed_at", nullable = false, updatable = false)

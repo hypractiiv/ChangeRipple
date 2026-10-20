@@ -33,7 +33,11 @@ flowchart TD
         MySQL[(MySQL 8 Database)]
     end
 
+<<<<<<< HEAD
     UI -->|"REST / JSON (JWT)"| Sec
+=======
+    UI -->|REST / JSON (JWT)| Sec
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
     Sec --> Ctrl
     Ctrl --> CoreEngines
     Ctrl --> Parser

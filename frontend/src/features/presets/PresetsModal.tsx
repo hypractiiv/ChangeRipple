@@ -4,7 +4,11 @@ import { Button } from '../../components/common/Button';
 import { Badge } from '../../components/common/Badge';
 import { PresetInfo } from '../../types';
 import { api } from '../../services/api';
+<<<<<<< HEAD
 import { Sparkles, ArrowRight, CheckCircle2, ShoppingCart, CreditCard, Mail, RefreshCw } from 'lucide-react';
+=======
+import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
 
 interface PresetsModalProps {
   isOpen: boolean;
@@ -26,6 +30,7 @@ export const PresetsModal: React.FC<PresetsModalProps> = ({ isOpen, onClose, onA
           setPresets([
             {
               key: 'core-db-schema',
+<<<<<<< HEAD
               title: '🛒 Scenario 1: Refactoring Order Database (High Blast Radius)',
               description: 'Modifying the core Order persistence entity. Shows how database changes ripple outward to services, controllers, and public checkout APIs.',
               componentName: 'OrderRepository',
@@ -59,6 +64,41 @@ export const PresetsModal: React.FC<PresetsModalProps> = ({ isOpen, onClose, onA
               category: 'LOGIC_CHANGE',
               severity: 'HIGH',
               expectedOutcome: 'Validates 3-color cycle detection preventing infinite recursion while cleanly resolving multi-path convergence.',
+=======
+              title: 'Core Data Model Mutation (OrderRepository)',
+              description: 'Refactor Order persistence entity to support fractional multi-currency balances and VAT isolation.',
+              componentName: 'OrderRepository',
+              category: 'DATA_MODEL_CHANGE',
+              severity: 'CRITICAL',
+              expectedOutcome: 'High blast radius across 5 components (OrderService, CheckoutController, Checkout API) with 50% test suite reduction.',
+            },
+            {
+              key: 'public-api-interface',
+              title: 'Payment Webhook Interface Alteration (PaymentService)',
+              description: 'Stripe v2 API upgrade updating token validation and webhook signatures.',
+              componentName: 'PaymentService',
+              category: 'INTERFACE_CHANGE',
+              severity: 'HIGH',
+              expectedOutcome: 'Affects OrderService and public payment APIs; traces to PCI-DSS compliance requirement.',
+            },
+            {
+              key: 'isolated-utility-fix',
+              title: 'Isolated Notification Template Fix (EmailTemplateHelper)',
+              description: 'Patch character escaping in email receipt template helper.',
+              componentName: 'EmailTemplateHelper',
+              category: 'LOGIC_CHANGE',
+              severity: 'LOW',
+              expectedOutcome: 'Low blast radius affecting only NotificationWorker; LOW risk score with minimal regression test needed.',
+            },
+            {
+              key: 'cycle-diamond-mesh',
+              title: 'Circular & Diamond Mesh Demonstration',
+              description: 'Demonstrates cycle-breaking traversal safety, multi-path convergence, and deterministic tie-breaking.',
+              componentName: 'DiamondServiceA',
+              category: 'LOGIC_CHANGE',
+              severity: 'HIGH',
+              expectedOutcome: 'Safely traverses diamond dependency and circular loop without infinite recursion.',
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
             },
           ]);
         });
@@ -80,6 +120,7 @@ export const PresetsModal: React.FC<PresetsModalProps> = ({ isOpen, onClose, onA
     }
   };
 
+<<<<<<< HEAD
   const getPresetIcon = (key: string) => {
     switch (key) {
       case 'core-db-schema':
@@ -95,12 +136,19 @@ export const PresetsModal: React.FC<PresetsModalProps> = ({ isOpen, onClose, onA
     }
   };
 
+=======
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
+<<<<<<< HEAD
       title="Interactive Demonstration Presets"
       description="Pick any real-world software change scenario below to instantly run impact analysis, calculate explainable risk scores, and optimize regression tests."
+=======
+      title="Quick Demonstration Presets"
+      description="One-click realistic software change scenarios demonstrating full-stack impact intelligence with zero manual data entry."
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
       maxWidth="2xl"
     >
       <div className="space-y-4">
@@ -118,6 +166,7 @@ export const PresetsModal: React.FC<PresetsModalProps> = ({ isOpen, onClose, onA
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-1.5">
+<<<<<<< HEAD
                   <div className="flex items-center gap-2">
                     <span className="p-1.5 rounded-lg bg-slate-800 border border-slate-700/80">
                       {getPresetIcon(preset.key)}
@@ -126,6 +175,11 @@ export const PresetsModal: React.FC<PresetsModalProps> = ({ isOpen, onClose, onA
                       {preset.title}
                     </h4>
                   </div>
+=======
+                  <h4 className="text-sm font-semibold text-slate-100 group-hover:text-brand-300 transition-colors">
+                    {preset.title}
+                  </h4>
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                   <div className="flex items-center gap-1.5 shrink-0">
                     <Badge variant="info" size="sm">{preset.category}</Badge>
                     <Badge
@@ -137,6 +191,7 @@ export const PresetsModal: React.FC<PresetsModalProps> = ({ isOpen, onClose, onA
                   </div>
                 </div>
 
+<<<<<<< HEAD
                 <p className="text-xs text-slate-300 mt-1 mb-2.5 leading-relaxed">{preset.description}</p>
 
                 <div className="p-2.5 rounded-lg bg-slate-950/70 border border-slate-800 text-xs text-slate-300 flex items-start gap-2">
@@ -150,6 +205,19 @@ export const PresetsModal: React.FC<PresetsModalProps> = ({ isOpen, onClose, onA
               <div className="flex items-center justify-between pt-2 border-t border-slate-800/80">
                 <span className="text-xs font-mono text-slate-400">
                   Target Component: <strong className="text-brand-400">{preset.componentName}</strong>
+=======
+                <p className="text-xs text-slate-400 mb-2">{preset.description}</p>
+
+                <div className="p-2.5 rounded-lg bg-slate-950/60 border border-slate-800/80 text-xs text-slate-300 flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-brand-400 shrink-0 mt-0.5" />
+                  <span><strong className="text-slate-200">Expected Outcome:</strong> {preset.expectedOutcome}</span>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between pt-1">
+                <span className="text-xs font-mono text-slate-400">
+                  Target: <strong className="text-brand-400">{preset.componentName}</strong>
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                 </span>
 
                 <Button
@@ -157,10 +225,17 @@ export const PresetsModal: React.FC<PresetsModalProps> = ({ isOpen, onClose, onA
                   variant="primary"
                   isLoading={loadingKey === preset.key}
                   onClick={() => handleRunPreset(preset.key)}
+<<<<<<< HEAD
                   className="shadow-sm shadow-brand-900/40 text-xs font-semibold px-4"
                 >
                   <Sparkles className="w-3.5 h-3.5 mr-1.5" />
                   1-Click Run & Analyze
+=======
+                  className="shadow-sm shadow-brand-900/40 text-xs"
+                >
+                  <Sparkles className="w-3.5 h-3.5 mr-1.5" />
+                  Run Preset Now
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                   <ArrowRight className="w-3 h-3 ml-1.5" />
                 </Button>
               </div>

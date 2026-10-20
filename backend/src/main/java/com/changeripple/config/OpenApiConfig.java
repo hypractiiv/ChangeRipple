@@ -19,9 +19,15 @@ public class OpenApiConfig {
 
         return new OpenAPI()
                 .info(new Info()
+<<<<<<< HEAD
                         .title("ChangeRipple v2.0 API")
                         .description("Advanced Software Change Impact Intelligence Platform REST API")
                         .version("2.0.0")
+=======
+                        .title("ChangeRipple API")
+                        .description("Advanced Software Change Impact Intelligence Platform REST API")
+                        .version("1.0.0")
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                         .contact(new Contact().name("ChangeRipple Engineering").email("support@changeripple.io"))
                         .license(new License().name("Apache 2.0").url("https://www.apache.org/licenses/LICENSE-2.0")))
                 .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))

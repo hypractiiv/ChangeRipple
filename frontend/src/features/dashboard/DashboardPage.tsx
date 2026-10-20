@@ -72,16 +72,27 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
   }, {} as Record<string, number>);
 
   const critColors: Record<string, string> = {
+<<<<<<< HEAD
     CRITICAL: '#C62828',
     HIGH: '#FF8F00',
     MEDIUM: '#FBC02D',
     LOW: '#10B981',
+=======
+    CRITICAL: '#ef4444',
+    HIGH: '#f97316',
+    MEDIUM: '#f59e0b',
+    LOW: '#10b981',
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
   };
 
   const critChartData = Object.entries(criticalityCounts).map(([name, count]) => ({
     name,
     value: count,
+<<<<<<< HEAD
     color: critColors[name] || '#FBC02D',
+=======
+    color: critColors[name] || '#14b8a6',
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
   }));
 
   if (isLoading) {
@@ -89,11 +100,19 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
   }
 
   return (
+<<<<<<< HEAD
     <div className="w-full max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Project Banner & Quick Action Buttons */}
       <div className="p-6 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900 to-slate-950 border border-slate-800 shadow-xl flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div>
           <div className="flex items-center gap-2 text-xs font-mono text-[#FBC02D] mb-1">
+=======
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+      {/* Project Banner & Quick Action Buttons */}
+      <div className="p-6 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900 to-slate-950 border border-slate-800 shadow-xl flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div>
+          <div className="flex items-center gap-2 text-xs font-mono text-brand-400 mb-1">
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
             <span>Active Architecture Workspace</span>
           </div>
@@ -235,12 +254,20 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
         <Card className="p-5 bg-slate-900/80 border-slate-800 space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-bold text-slate-200 flex items-center gap-2">
+<<<<<<< HEAD
               <Activity className="w-4 h-4 text-[#FBC02D]" />
+=======
+              <Activity className="w-4 h-4 text-brand-400" />
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
               Recent Impact Analyses
             </h3>
             <button
               onClick={() => onNavigateTab('history')}
+<<<<<<< HEAD
               className="text-xs text-[#FBC02D] hover:text-amber-300 flex items-center gap-1 font-medium transition-colors"
+=======
+              className="text-xs text-brand-400 hover:text-brand-300 flex items-center gap-1"
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
             >
               View History &rarr;
             </button>
@@ -254,7 +281,11 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
                 <div
                   key={run.id}
                   onClick={() => onSelectAnalysis(run.id)}
+<<<<<<< HEAD
                   className="p-3 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-amber-500/50 hover:bg-slate-950 transition-all cursor-pointer flex items-center justify-between"
+=======
+                  className="p-3 rounded-xl bg-slate-950/60 border border-slate-800 hover:border-brand-500/50 hover:bg-slate-950 transition-all cursor-pointer flex items-center justify-between"
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                 >
                   <div className="space-y-1">
                     <div className="text-xs font-semibold text-slate-100 flex items-center gap-2">
@@ -287,7 +318,11 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
             </h3>
             <button
               onClick={() => onNavigateTab('components')}
+<<<<<<< HEAD
               className="text-xs text-[#FBC02D] hover:text-amber-300 flex items-center gap-1 font-medium transition-colors"
+=======
+              className="text-xs text-brand-400 hover:text-brand-300 flex items-center gap-1"
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
             >
               All Components &rarr;
             </button>

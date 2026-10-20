@@ -15,7 +15,11 @@ import { HistoryComparePage } from '../features/history/HistoryComparePage';
 import { LoadingSpinner } from '../components/common/LoadingSpinner';
 
 export const App: React.FC = () => {
+<<<<<<< HEAD
   const { isAuthenticated, openAuthModal, login } = useAuth();
+=======
+  const { isAuthenticated, openAuthModal } = useAuth();
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
 
   const [projects, setProjects] = useState<Project[]>([]);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -108,6 +112,7 @@ export const App: React.FC = () => {
     }
   };
 
+<<<<<<< HEAD
   const handleQuickEvaluation = async () => {
     setIsLoading(true);
     try {
@@ -120,6 +125,8 @@ export const App: React.FC = () => {
     }
   };
 
+=======
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
   return (
     <div className="min-h-screen bg-slate-950 flex flex-col font-sans">
       <Navbar
@@ -132,14 +139,28 @@ export const App: React.FC = () => {
           setActiveAnalysisId(null);
           setActiveAnalysisDetail(null);
         }}
+<<<<<<< HEAD
         onOpenPresets={() => setIsPresetsOpen(true)}
+=======
+        onOpenPresets={() => {
+          if (!isAuthenticated) {
+            openAuthModal();
+          } else {
+            setIsPresetsOpen(true);
+          }
+        }}
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
       />
 
       <main className="flex-1 flex flex-col">
         {!isAuthenticated ? (
           <div className="flex-1 flex items-center justify-center p-6">
             <div className="max-w-md w-full text-center space-y-5 p-8 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl">
+<<<<<<< HEAD
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FBC02D]/20 to-[#FF8F00]/20 border border-[#FBC02D]/40 text-[#FBC02D] flex items-center justify-center mx-auto shadow-lg shadow-orange-950/30">
+=======
+              <div className="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center mx-auto">
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                 <span className="text-2xl font-bold font-mono">CR</span>
               </div>
               <h2 className="text-2xl font-extrabold text-slate-100 tracking-tight">
@@ -149,6 +170,7 @@ export const App: React.FC = () => {
                 Analyze software dependencies as a directed graph, evaluate downstream ripple effects,
                 calculate explainable risk scores, and optimize regression suites.
               </p>
+<<<<<<< HEAD
 
               <div className="space-y-2.5 pt-2">
                 <button
@@ -172,6 +194,14 @@ export const App: React.FC = () => {
                   Switch Account or Sign In Manually →
                 </button>
               </div>
+=======
+              <button
+                onClick={openAuthModal}
+                className="w-full py-2.5 px-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-medium text-sm transition-all shadow-md shadow-brand-900/40"
+              >
+                Sign In or Evaluate Platform
+              </button>
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
             </div>
           </div>
         ) : isLoading ? (

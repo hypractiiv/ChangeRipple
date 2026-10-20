@@ -131,6 +131,7 @@ export const RegressionTestView: React.FC<RegressionTestViewProps> = ({
       )}
 
       {/* Selected Tests Table */}
+<<<<<<< HEAD
       <div className="border border-slate-800 rounded-xl bg-slate-900/60 shadow-xl overflow-hidden">
         <div className="overflow-x-auto w-full">
           <table className="w-full min-w-[850px] text-left border-collapse text-xs">
@@ -176,6 +177,51 @@ export const RegressionTestView: React.FC<RegressionTestViewProps> = ({
             </tbody>
           </table>
         </div>
+=======
+      <div className="border border-slate-800 rounded-xl overflow-hidden bg-slate-900/60">
+        <table className="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr className="border-b border-slate-800 bg-slate-900/90 text-slate-400 font-mono text-[11px] uppercase tracking-wider">
+              <th className="py-3 px-4 w-16">Rank</th>
+              <th className="py-3 px-4">Test Suite</th>
+              <th className="py-3 px-4">Covered Affected Components</th>
+              <th className="py-3 px-4">Selection Rationale</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-800/60 text-slate-200">
+            {currentSelection.selectedTests.length === 0 ? (
+              <tr>
+                <td colSpan={4} className="py-8 text-center text-slate-500">
+                  No automated tests selected.
+                </td>
+              </tr>
+            ) : (
+              currentSelection.selectedTests.map((test) => (
+                <tr key={test.testComponentId} className="hover:bg-slate-800/40 transition-colors">
+                  <td className="py-3 px-4 font-mono font-bold text-brand-400">
+                    #{test.selectionRank}
+                  </td>
+                  <td className="py-3 px-4 font-mono font-semibold text-slate-100">
+                    {test.testComponentName}
+                  </td>
+                  <td className="py-3 px-4">
+                    <div className="flex flex-wrap gap-1">
+                      {test.coveredComponentNames.map((cName, idx) => (
+                        <Badge key={idx} variant="default" size="sm">
+                          {cName}
+                        </Badge>
+                      ))}
+                    </div>
+                  </td>
+                  <td className="py-3 px-4 text-slate-300">
+                    {test.selectionReason}
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
       </div>
     </div>
   );

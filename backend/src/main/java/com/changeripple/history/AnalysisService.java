@@ -111,7 +111,11 @@ public class AnalysisService {
                     .testSuiteReductionPercent(greedyTests.getTestSuiteReductionPercent())
                     .testCoveragePercent(greedyTests.getTestCoveragePercent())
                     .uncoveredComponentCount(greedyTests.getUncoveredComponentCount())
+<<<<<<< HEAD
                     .algorithmVersion("v2.0-bfs-greedy")
+=======
+                    .algorithmVersion("v1.0-bfs-greedy")
+>>>>>>> d26229447ca75383cba0b12e543832c98380e13c
                     .build();
 
             run = analysisRunRepository.save(run);
